@@ -1,0 +1,113 @@
+INSERT INTO researcher VALUES
+(DEFAULT,'Derry','Xiong','dx@sfu.ca','SFU'),
+(DEFAULT,'Priscilla','Lollard','pl@sfu.ca','SFU'),
+(DEFAULT,'Gerard','Leon','gl@sfu.ca','SFU'),
+(DEFAULT,'Ned','Cain','nc@ubc.ca','UBC'),
+(DEFAULT,'Nikita','Krueger','nk@ubc2.ca','UBC'),
+(DEFAULT,'Suzanne','Donovan','sd@ubc.ca','UBC'),
+(DEFAULT,'Jamie','Espinosa','js@uvic.ca','UVIC'),
+(DEFAULT,'Everly','Brock','eb@uvic.ca','UVIC'),
+(DEFAULT,'Brennan','Lennon','bl@uvic.ca','UVIC'),
+(DEFAULT,'Mahamed','Mabdi','mm@kpu.ca','KPU'),
+(DEFAULT,'Daniela','Whitehouse','dw@kpu.ca','KPU'),
+(DEFAULT,'Kamran','Woodley','kw@kpu.ca','KPU'),
+(DEFAULT,'Ella','Pemberton','ep@uoft.ca','UOFT'),
+(DEFAULT,'Yasmin','Parker','yp@uoft.ca','UOFT'),
+(DEFAULT,'Evangeline','Greaves','eg@uoft.ca','UOFT');
+
+INSERT INTO call VALUES
+(DEFAULT,'CS Call 1', '2020-03-30', NULL, 'Computer Science', 'closed'),
+(DEFAULT,'CS Call 2', '2020-04-30', NULL, 'Computer Science', DEFAULT),
+
+(DEFAULT,'Eng Call 1', '2020-03-30', NULL, 'Engineering', 'closed'),
+(DEFAULT,'Eng Call 2', '2020-04-30', NULL, 'Engineering', DEFAULT),
+
+(DEFAULT,'Bio Call 1', '2020-03-30', NULL, 'Biology', 'closed'),
+(DEFAULT,'Bio Call 2', '2020-04-30', NULL, 'Biology', DEFAULT),
+
+(DEFAULT,'Cancelled Call 1', '2020-04-30', NULL, 'Computer Science', 'cancelled');
+
+INSERT INTO proposal VALUES 
+(DEFAULT,1,1, 'awarded', 25000.00, 15000.00, '2020-03-15'),
+(DEFAULT,1,13, 'denied', 2500.00, NULL, '2020-03-20'),
+(DEFAULT,1,15, 'awarded', 5000.00, 7500.00, '2020-03-25'),
+(DEFAULT,2,1, 'submitted', 2000.00, NULL, '2020-04-15'),
+(DEFAULT,2,12, 'submitted', 7500.00, NULL, '2020-04-20'),
+
+(DEFAULT,3,4, 'awarded', 22500.00, 25000.00, '2020-03-25'),
+(DEFAULT,3,7, 'denied', 40000.00, NULL, '2020-03-20'),
+(DEFAULT,3,14, 'awarded', 30000.00, 15000.00, '2020-03-25'),
+(DEFAULT,4,2, 'submitted', 3000.00, NULL, '2020-04-15'),
+(DEFAULT,4,5, 'submitted', 900.00, NULL, '2020-04-20'),
+
+(DEFAULT,5,6, 'awarded', 21000.00, 20000.00, '2020-03-15'),
+(DEFAULT,5,3, 'denied', 10000.00, NULL, '2020-03-20'),
+(DEFAULT,5,9, 'denied', 40000.00, NULL, '2020-03-25'),
+(DEFAULT,6,10, 'submitted', 500.00, NULL, '2020-04-15'),
+(DEFAULT,6,11, 'submitted', 800.00, NULL, '2020-04-20'),
+
+(DEFAULT,7,8, 'submitted', 3000.00, NULL, '2020-04-09');
+
+
+INSERT INTO collaborator VALUES
+(DEFAULT,1,1),
+(DEFAULT,2,15),
+(DEFAULT,3,6),
+(DEFAULT,4,3),
+(DEFAULT,4,4),
+(DEFAULT,4,5),
+(DEFAULT,4,6),
+(DEFAULT,4,7),
+(DEFAULT,4,8),
+(DEFAULT,4,9),
+(DEFAULT,4,10),
+(DEFAULT,4,11),
+(DEFAULT,4,12),
+(DEFAULT,4,13),
+(DEFAULT,9,15),
+(DEFAULT,9,14),
+(DEFAULT,9,13),
+(DEFAULT,9,12),
+(DEFAULT,9,11),
+(DEFAULT,9,10),
+(DEFAULT,9,8),
+(DEFAULT,9,7),
+(DEFAULT,9,6),
+(DEFAULT,9,5),
+(DEFAULT,9,4);
+
+INSERT INTO conflict VALUES
+(DEFAULT,1,2,'Approved funding of previous proposal', '2021-06-30'),
+(DEFAULT,3,4,'Co-founded company together',NULL),(DEFAULT,4,3,'Co-founded company together',NULL),
+(DEFAULT,5,6,'Same department', NULL),(DEFAULT,6,5,'Same department', NULL),
+(DEFAULT,7,8,'Colleagues in recent competition', '2022-06-30'),(DEFAULT,8,7,'Colleagues in recent competition', '2022-06-30');
+
+INSERT INTO review VALUES
+(DEFAULT,1,10, '2020-04-05','f'),
+(DEFAULT,2,10, '2020-04-05','f'),
+(DEFAULT,3,10, '2020-04-05','f'),
+(DEFAULT,5,10, '2020-04-02','t'),
+(DEFAULT,2,11, '2020-04-05','f'),
+(DEFAULT,3,12, '2020-04-05','f'),
+(DEFAULT,6,1, '2020-04-02','f'),
+(DEFAULT,7,2, '2020-04-02','f'),
+(DEFAULT,8,3, '2020-04-02','t'),
+(DEFAULT,10,5, '2020-04-03','f'),
+(DEFAULT,11,7, '2020-04-03','f'),
+(DEFAULT,12,15, '2020-04-03','f');
+
+INSERT INTO meeting VALUES
+(DEFAULT, '2020-04-05', 1),
+(DEFAULT, '2020-04-02', 2),
+(DEFAULT, '2020-04-03', 1);
+
+INSERT INTO meetingcall VALUES
+(1, 1),
+(2, 3),
+(3, 5);
+
+INSERT INTO meetingreviewer VALUES
+(1, 5),
+(1, 3);
+
+

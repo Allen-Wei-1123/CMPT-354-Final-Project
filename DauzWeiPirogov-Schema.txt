@@ -1,0 +1,70 @@
+CREATE TABLE researcher(
+id SERIAL PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50) UNIQUE NOT NULL,
+organization VARCHAR(10)
+);
+
+CREATE TYPE callstatus AS ENUM('open','closed','paused','cancelled'); 
+
+CREATE TABLE call(
+id SERIAL PRIMARY KEY,
+title VARCHAR(50) NOT NULL,
+deadline DATE NOT NULL,
+description VARCHAR(250),
+area VARCHAR(30) NOT NULL,
+status callstatus DEFAULT 'open'
+);
+
+CREATE TYPE appstatus AS ENUM('submitted','awarded','denied');
+
+CREATE TABLE proposal(
+id SERIAL PRIMARY KEY,
+callid INT REFERENCES call(id) NOT NULL,
+pi INT REFERENCES researcher(id) NOT NULL,
+status appstatus DEFAULT 'submitted' NOT NULL,
+requested NUMERIC (14,2) NOT NULL,
+awarded NUMERIC(14,2),
+submitdate DATE NOT NULL
+); 
+
+CREATE TABLE collaborator(
+id SERIAL PRIMARY KEY,
+proposalid INT REFERENCES proposal(id) NOT NULL,
+researcherid INT REFERENCES researcher(id) NOT NULL
+);
+
+CREATE TABLE conflict(
+id SERIAL PRIMARY KEY,
+researcher1 INT REFERENCES researcher(id) NOT NULL,
+researcher2 INT REFERENCES researcher(id) NOT NULL,
+reason VARCHAR(50),
+expiry DATE,
+CHECK (researcher1 <> researcher2)
+);
+
+CREATE TABLE review(
+id SERIAL PRIMARY KEY,
+proposal INT REFERENCES proposal(id) NOT NULL,
+reviewerid INT REFERENCES researcher(id) NOT NULL,
+deadline DATE NOT NULL,
+submitted BOOLEAN DEFAULT 'false' NOT NULL
+);
+
+
+CREATE TABLE meeting(
+id SERIAL PRIMARY KEY,
+date DATE NOT NULL,
+roomnum int NOT NULL
+);
+
+CREATE TABLE meetingcall(
+meetingid INT REFERENCES meeting(id) NOT NULL,
+callid INT REFERENCES call(id) NOT NULL
+);
+
+CREATE TABLE meetingreviewer(
+meetingid INT REFERENCES meeting(id) NOT NULL,
+reviewerid INT REFERENCES researcher(id) NOT NULL
+);
