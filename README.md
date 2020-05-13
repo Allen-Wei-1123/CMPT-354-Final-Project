@@ -5,6 +5,7 @@
 
 <p>
   In this final project, I worked with two other students to write an embedded SQL interface using Python. 
+  <br/>
   Please read DauzWeiPirogov-Report.pdf for more details
 </p>
 
