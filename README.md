@@ -1,6 +1,6 @@
 # CMPT-354-Final-Project
 <h1>
-  Hello
+  Project Overview
 </h1>
 
 <p>
